@@ -35,12 +35,15 @@ var appRouter = function(app) {
     app.get("/games", function(req, res) {
 
         var newday = new Date();
-        var today = newday.mmddyy();
-
+        var today = (newday.toLocaleDateString()).split("/");
+        var realday = new Date(parseInt(today[2]),(parseInt(today[0])-1), parseInt(today[1]));
+        //console.log(newday.mmddyy());
+        //console.log(realday.mmddyy());
+      
         var todays_games = obj.filter(d => {
             var tempDateString = d["START DATE"];
 
-            if (tempDateString == today) {
+            if (tempDateString == realday.mmddyy()) {
                 return true;
             } else {
                 return false;
