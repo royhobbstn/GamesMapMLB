@@ -1,0 +1,28 @@
+{
+  "name": "gamesmapmlb",
+  "version": "0.0.1",
+  "description": "current baseball games on a map",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/royhobbstn/GamesMapMLB.git"
+  },
+  "keywords": [
+    "baseball",
+    "leaflet",
+    "geojson"
+  ],
+  "author": "",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/royhobbstn/GamesMapMLB/issues"
+  },
+  "homepage": "https://github.com/royhobbstn/GamesMapMLB#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4"
+  }
+}

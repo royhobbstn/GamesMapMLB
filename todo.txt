@@ -1,0 +1,7 @@
+
+Needs to reset at Midnight Local Time
+
+Would be nice to tell at a glance which teams are playing
+
+Format Info in Popup Window
+
