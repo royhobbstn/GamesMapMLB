@@ -35,15 +35,13 @@ var appRouter = function(app) {
     app.get("/games", function(req, res) {
 
         var newday = new Date();
-        var today = (newday.toLocaleDateString()).split("/");
-        var realday = new Date(parseInt(today[2]),(parseInt(today[0])-1), parseInt(today[1]));
-        //console.log(newday.mmddyy());
-        //console.log(realday.mmddyy());
+        var offset = -8; //hours from UTC to Pacific
+        var day_pacifictime = new Date( new Date().getTime() + offset * 3600 * 1000);
       
         var todays_games = obj.filter(d => {
             var tempDateString = d["START DATE"];
 
-            if (tempDateString == realday.mmddyy()) {
+            if (tempDateString == day_pacifictime.mmddyy()) {
                 return true;
             } else {
                 return false;

@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Games Map MLB</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+<canvas id="myCanvas" width="30" height="40" style="display: none;"></canvas>
+
+  <script>
+    
+    var c=document.getElementById("myCanvas");
+    var ctx=c.getContext("2d");
+    
+
+      
+
+    //returns a promise
+    var a = createUniqueImage('stl','sf');
+    
+    a.then(function(value) {
+   document.write('<img src="' + value + '" width="30px" height="40px"/>');
+  }, function(reason) {
+      console.log('error:',reason);
+});
+
+    
+    function createUniqueImage(away, home){
+      var promise = new Promise(function(resolve, reject){
+    var imageObj1 = new Image();
+    var imageObj2 = new Image();
+    var imageObj3 = new Image();
+    imageObj1.src = "markers/template.png";
+    imageObj1.onload = function() {
+      ctx.drawImage(imageObj1, 0, 0);
+      imageObj2.src = "markers/" + away + ".png";
+      imageObj2.onload = function() {
+        ctx.drawImage(imageObj2, 3, 2);
+        imageObj3.src = "markers/" + home + ".png";
+        imageObj3.onload = function() {
+          ctx.drawImage(imageObj3, 3, 17);
+          var img = c.toDataURL("image/png");
+          resolve(img);
+          }
+       }
+    }
+        });
+      
+      return promise;
+    }
+
+    
+	</script>
+</body>
+</html>

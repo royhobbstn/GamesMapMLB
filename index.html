@@ -42,10 +42,10 @@ overflow-y: hidden;
 		}).addTo(map);
 
 		var baseballIcon = L.icon({
-			iconUrl: 'baseball-marker.png',
-			iconSize: [32, 37],
-			iconAnchor: [16, 37],
-			popupAnchor: [0, -28]
+			iconUrl: 'markers/sfgstl.png',
+			iconSize: [30, 40],
+			iconAnchor: [15, 40],
+			popupAnchor: [0, -15]
 		});
 
     
@@ -72,7 +72,7 @@ xhr.send(null);
       
       game_day_data.forEach(function(d, i){
         
-        markers[i] = L.marker([d.coordinates[1],d.coordinates[0]]).addTo(map);
+        markers[i] = L.marker([d.coordinates[1],d.coordinates[0]], {icon: baseballIcon}).addTo(map);
         markers[i].bindPopup(d["SUBJECT"]);
       });
       
