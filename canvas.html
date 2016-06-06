@@ -9,41 +9,60 @@
 </head>
 <body>
 
-<canvas id="myCanvas" width="30" height="40" style="display: none;"></canvas>
-
   <script>
     
-    var c=document.getElementById("myCanvas");
-    var ctx=c.getContext("2d");
+    var length=10;
     
-
+    var c = [];
+    var a = [];
+    
+    c.length = length;
+    
+    for(var i=0;i<10;i++){
+      c[i]= document.createElement('canvas');
+        c[i].width = 30;
+  c[i].height = 40;
+    if(i===1) {
+      c[i].dataset.home = 'kc';
+    }else{
+      c[i].dataset.home = 'sf';
+    }
+  c[i].setAttribute("style", "display: none;");
+    }
+    
+c.forEach(function(elem, idx){
+  a[idx] = createUniqueImage('stl',elem.dataset.home, elem);
+});
+  
+ 
+    
+    Promise.all(a).then(function(value) {
+      for(var j=0;j<length;j++){
+   document.write('<img src="' + value[j] + '" width="30px" height="40px"/>');
+      }
       
-
-    //returns a promise
-    var a = createUniqueImage('stl','sf');
-    
-    a.then(function(value) {
-   document.write('<img src="' + value + '" width="30px" height="40px"/>');
   }, function(reason) {
       console.log('error:',reason);
 });
 
     
-    function createUniqueImage(away, home){
+    function createUniqueImage(away, home, elem){
       var promise = new Promise(function(resolve, reject){
+        console.log(elem);
+        var ctx = elem.getContext("2d");
     var imageObj1 = new Image();
     var imageObj2 = new Image();
     var imageObj3 = new Image();
-    imageObj1.src = "markers/template.png";
+    imageObj1.src = "markers/frame.png";
     imageObj1.onload = function() {
       ctx.drawImage(imageObj1, 0, 0);
       imageObj2.src = "markers/" + away + ".png";
       imageObj2.onload = function() {
-        ctx.drawImage(imageObj2, 3, 2);
+        ctx.drawImage(imageObj2, 1, 1);
         imageObj3.src = "markers/" + home + ".png";
         imageObj3.onload = function() {
-          ctx.drawImage(imageObj3, 3, 17);
-          var img = c.toDataURL("image/png");
+          ctx.drawImage(imageObj3, 1, 16);
+          var img = elem.toDataURL("image/png");
           resolve(img);
           }
        }
