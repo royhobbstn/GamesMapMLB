@@ -1,5 +1,7 @@
 "use strict";
 
+
+// From Post by o-o  http://stackoverflow.com/a/3067896/4805025
 Date.prototype.mmddyy = function() {
     var yyyy = this.getFullYear().toString();
     var mm = (this.getMonth() + 1).toString(); // getMonth() is zero-based
