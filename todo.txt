@@ -1,11 +1,12 @@
 
-Create app to scrape schedule data from mlb?  //home
-
-
+Writeup
+Title
 Credits & Sources
 
 
 SSL for Github Pages Hosting?
 http://stackoverflow.com/questions/19665863/how-do-i-use-a-self-signed-certificate-for-a-https-node-js-server/24749608#24749608
 
-
+Upgrade Docker Instructions
+------------
+https://www.raspberrypi.org/forums/viewtopic.php?f=66&t=137621

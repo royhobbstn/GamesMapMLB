@@ -55,6 +55,10 @@ var appRouter = function(app) {
 
     });
 
+  
+    app.get("/", function(req, res){
+      res.sendFile("/index.html");
+    });
 }
 
 module.exports = appRouter;
