@@ -21,7 +21,7 @@ document.getElementById('mapcredits').addEventListener('click', function(){win.s
 		xhr.send(null);
 
 		xhr.onreadystatechange = function() {
-			if (xhr.readyState === 4) {
+			if (xhr.readyState === 4) { 
 				if (xhr.status === 200) {
 					var game_day_data = JSON.parse(xhr.responseText);
 					pictureArray(game_day_data);
@@ -51,7 +51,7 @@ document.getElementById('mapcredits').addEventListener('click', function(){win.s
       
 		}
 
-		var pictureArray = function(game_day_data) {
+		function pictureArray(game_day_data) {
       
 				var length = game_day_data.length;
 				var c = []; //canvas elements
@@ -100,97 +100,3 @@ document.getElementById('mapcredits').addEventListener('click', function(){win.s
 					return 'error';
 				});
 			} //end pictureArray
-
-		function teamAbbrevLookup(team) {
-			if (team === "Rays") {
-				return "tb";
-			}
-			if (team === "Orioles") {
-				return "bal";
-			}
-			if (team === "Blue Jays") {
-				return "tor";
-			}
-			if (team === "Yankees") {
-				return "nyy";
-			}
-			if (team === "Red Sox") {
-				return "bos";
-			}
-			if (team === "Indians") {
-				return "cle";
-			}
-			if (team === "Royals") {
-				return "kc";
-			}
-			if (team === "Tigers") {
-				return "det";
-			}
-			if (team === "Twins") {
-				return "min";
-			}
-			if (team === "White Sox") {
-				return "chw";
-			}
-			if (team === "Mariners") {
-				return "sea";
-			}
-			if (team === "Astros") {
-				return "hou";
-			}
-			if (team === "Rangers") {
-				return "tex";
-			}
-			if (team === "Angels") {
-				return "laa";
-			}
-			if (team === "Athletics") {
-				return "oak";
-			}
-			if (team === "Braves") {
-				return "atl";
-			}
-			if (team === "Phillies") {
-				return "phi";
-			}
-			if (team === "Mets") {
-				return "nym";
-			}
-			if (team === "Nationals") {
-				return "wsh";
-			}
-			if (team === "Marlins") {
-				return "mia";
-			}
-			if (team === "Cubs") {
-				return "chc";
-			}
-			if (team === "Pirates") {
-				return "pit";
-			}
-			if (team === "Cardinals") {
-				return "stl";
-			}
-			if (team === "Brewers") {
-				return "mil";
-			}
-			if (team === "Reds") {
-				return "cin";
-			}
-			if (team === "D-backs") {
-				return "ari";
-			}
-			if (team === "Rockies") {
-				return "col";
-			}
-			if (team === "Dodgers") {
-				return "lad";
-			}
-			if (team === "Padres") {
-				return "sd";
-			}
-			if (team === "Giants") {
-				return "sf";
-			}
-			return "invalid - no match for team!";
-		}
