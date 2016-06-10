@@ -17,7 +17,7 @@ var win = L.control.window(map,{title:'Credits',content:'<a href="" target="_bla
 document.getElementById('mapcredits').addEventListener('click', function(){win.show();})
 
 		var xhr = new XMLHttpRequest();
-		xhr.open('GET', 'http://red-meteor-147235.nitrousapp.com:4000/games');
+		xhr.open('GET', '/games');
 		xhr.send(null);
 
 		xhr.onreadystatechange = function() {
