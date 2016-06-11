@@ -15,7 +15,7 @@ var locationLookup = require("../modules/locationLookup.js")
 var obj = require("../data/schedule.json");
 
 
-obj.forEach(a => {
+obj.forEach(function(a){
   delete a["END DATE"];
   delete a["END DATE ET"];
   delete a["END TIME"];
@@ -40,7 +40,7 @@ var appRouter = function(app) {
         var offset = -8; //hours from UTC to Pacific
         var day_pacifictime = new Date( new Date().getTime() + offset * 3600 * 1000);
       
-        var todays_games = obj.filter(d => {
+        var todays_games = obj.filter(function(d){
             var tempDateString = d["START DATE"];
 
             if (tempDateString == day_pacifictime.mmddyy()) {
