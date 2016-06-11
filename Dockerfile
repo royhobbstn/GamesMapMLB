@@ -1,4 +1,4 @@
-FROM hypriot/rpi-node:6.1.0-wheezy
+FROM hypriot/rpi-node:4.4.4-wheezy
 
 ADD . .
 
