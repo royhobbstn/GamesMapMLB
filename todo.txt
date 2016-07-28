@@ -1,44 +1,19 @@
 
-Writeup
 
-Title Control - mobile responsive
+Map Credits Writeup Link
 
-Credits & Sources (Link to Writeup)
-
-
-
-Upgrade Docker Instructions
-------------
-https://www.raspberrypi.org/forums/viewtopic.php?f=66&t=137621
-
-
-Intro
-
-Snappy Title
+Step by Step
 
 Have you ever wanted to see the days baseball games ON A MAP?  No?  Will if you ever change your mind, have I got a map for you!
 
 But how come it doesn't give me the scores of any of the currently running games?  Lame!  Hey buddy, it's only there because you haven't added that feature yet!  Go nuts!
 
 
-Writeup about Docker
--------
-Talk about: Docker on Raspberry Pi (installed, but need to upgrade for DockerHub Compatibility)
-Docker base Images - Need ARM compatible
-
-Building on your own Vs dockerpull (can you do it?)
-
-Errors in building from Dockerfile - how I got past it (will I?)
-
-
-About the Map
-------
-Data comes from:
-(download and concatenate rather than auto-scrape)
-
-Other data source from JF - ballpark data
-
 Icons - Yes, I do a lot of front end development, but I wont claim to be a designer.
 
 Image creation on the fly - probably doesnt scale
+
 Data URIs are beautiful things!
+
+Readme
+
