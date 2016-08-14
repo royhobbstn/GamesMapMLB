@@ -62,7 +62,8 @@ document.getElementById('mapcredits').addEventListener('click', function(){win.s
 					c[i].width = 30;
 					c[i].height = 40;
 					c[i].setAttribute("style", "display: none;");
-					var teams = (game_day_data[i].SUBJECT).split(' at ');
+					var teams = (game_day_data[i].SUBJECT).replace(" - Time TBD","");
+					teams = teams.split(' at ');
 					c[i].dataset.home = teamAbbrevLookup(teams[1]);
 					c[i].dataset.away = teamAbbrevLookup(teams[0]);
 				}
