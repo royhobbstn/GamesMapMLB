@@ -46,7 +46,7 @@ document.getElementById('mapcredits').addEventListener('click', function(){win.s
 				markers[i] = L.marker([d.coordinates[1], d.coordinates[0]], {
 					icon: newIcon
 				}).addTo(map);
-				markers[i].bindPopup("<b>" + d["SUBJECT"] + "</b><br />"+ ((d["START TIME"]) ? (d["START TIME"]).replace(/^[0]+/g,'') : "") + " (local)<br />" + d["START TIME ET"].replace(/^[0]+/g,'') + " (ET)<br />" + d["LOCATION"]);
+				markers[i].bindPopup("<b>" + d["SUBJECT"] + "</b><br />"+ ( (d["START TIME"]) ? (d["START TIME"]).replace(/^[0]+/g,'') : "" ) + " (local)<br />" + ( (d["START TIME ET"]) ? d["START TIME ET"].replace(/^[0]+/g,'') : "" ) + " (ET)<br />" + d["LOCATION"]);
 			});
       
 		}
