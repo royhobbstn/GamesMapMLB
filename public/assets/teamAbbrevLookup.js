@@ -90,5 +90,5 @@
 			if (team === "Giants") {
 				return "sf";
 			}
-			return "invalid - no match for team!";
+			return team + " invalid - no match for team!";
 		}
