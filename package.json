@@ -1,6 +1,6 @@
 {
   "name": "gamesmapmlb",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "current baseball games on a map",
   "main": "app.js",
   "scripts": {
