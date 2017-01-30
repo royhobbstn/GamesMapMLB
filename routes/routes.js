@@ -1,8 +1,7 @@
 "use strict";
 
-
 // From Post by o-o  http://stackoverflow.com/a/3067896/4805025
-Date.prototype.mmddyy = function() {
+Date.prototype.mmddyy = function () {
     var yyyy = this.getFullYear().toString();
     var mm = (this.getMonth() + 1).toString(); // getMonth() is zero-based
     var dd = this.getDate().toString();
@@ -12,40 +11,40 @@ Date.prototype.mmddyy = function() {
 var coordinatesLookup = require("../modules/coordinatesLookup.js")
 var locationLookup = require("../modules/locationLookup.js")
 
-var obj = require("../data/schedule.json");
+var obj = require("../data/schedule2017.json");
 
 
-obj.forEach(function(a){
-  delete a["END DATE"];
-  delete a["END DATE ET"];
-  delete a["END TIME"];
-  delete a["END TIME ET"];
-  delete a["REMINDER OFF"];
-  delete a["REMINDER ON"];
-  delete a["REMINDER DATE"];
-  delete a["REMINDER TIME"];
-  delete a["REMINDER TIME ET"];
-  delete a["SHOWTIMEAS FREE"];
-  delete a["SHOWTIMEAS BUSY"];
-  a.ballpark = locationLookup(a["LOCATION"]);
-  a.coordinates = coordinatesLookup(a.ballpark);
+obj.forEach(function (a) {
+    delete a["END DATE"];
+    delete a["END DATE ET"];
+    delete a["END TIME"];
+    delete a["END TIME ET"];
+    delete a["REMINDER OFF"];
+    delete a["REMINDER ON"];
+    delete a["REMINDER DATE"];
+    delete a["REMINDER TIME"];
+    delete a["REMINDER TIME ET"];
+    delete a["SHOWTIMEAS FREE"];
+    delete a["SHOWTIMEAS BUSY"];
+    a.ballpark = locationLookup(a["LOCATION"]);
+    a.coordinates = coordinatesLookup(a.ballpark);
 });
 
 
-var appRouter = function(app) {
+var appRouter = function (app) {
 
-    app.get("/games", function(req, res) {
+    app.get("/games", function (req, res) {
 
-        var newday = new Date();
         var offset = -8; //hours from UTC to Pacific
-        var day_pacifictime = new Date( new Date().getTime() + offset * 3600 * 1000);
-      
-        var todays_games = obj.filter(function(d){
+        var day_pacifictime = new Date(new Date().getTime() + offset * 3600 * 1000);
+
+        var todays_games = obj.filter(function (d) {
             var tempDateString = d["START DATE"];
 
-            if (tempDateString == day_pacifictime.mmddyy()) {
+            if (tempDateString == '02/25/17') { //day_pacifictime.mmddyy()) {
                 return true;
-            } else {
+            }
+            else {
                 return false;
             }
 
@@ -56,6 +55,6 @@ var appRouter = function(app) {
     });
 
 
-}
+};
 
 module.exports = appRouter;
