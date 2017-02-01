@@ -8,8 +8,8 @@ module.exports = function (location) {
   if (location === "Chase Field - Phoenix") {
     new_location = "Chase Field";
   }
-  if (location === "Turner Field - Atlanta") {
-    new_location = "Turner Field";
+  if (location === "SunTrust Park - Atlanta") {
+    new_location = "SunTrust Park";
   }
   if (location === "Oriole Park at Camden Yards - Baltimore") {
     new_location = "Oriole Park at Camden Yards";
@@ -20,8 +20,8 @@ module.exports = function (location) {
   if (location === "Wrigley Field - Chicago") {
     new_location = "Wrigley Field";
   }
-  if (location === "U.S. Cellular Field - Chicago") {
-    new_location = "U.S. Cellular Field";
+  if (location === "Guaranteed Rate Field - Chicago") {
+    new_location = "Guaranteed Rate Field";
   }
   if (location === "Great American Ball Park - Cincinnati") {
     new_location = "Great American Ball Park";
@@ -142,9 +142,58 @@ module.exports = function (location) {
   if (location === "JetBlue Park - Ft. Myers") {
     new_location = "jetBlue Park at Fenway South";
   }
-
-
+  if (location === "Hohokam Stadium - Mesa") {
+    new_location = "HoHoKam Stadium";
+  }
+  if (location === "George M. Steinbrenner Field - Tampa") {
+    new_location = "George M. Steinbrenner Field";
+  }
+  if (location === "Florida Auto Exchange Stadium - Dunedin") {
+    new_location = "Florida Auto Exchange Stadium";
+  }
+  if (location === "Maryvale Baseball Park - Phoenix") {
+    new_location = "Maryvale Baseball Park";
+  }
+  if (location === "CenturyLink Sports Complex - Fort Myers") {
+    new_location = "Hammond Stadium";
+  }
+  if (location === "Ed Smith Stadium - Sarasota") {
+    new_location = "Ed Smith Stadium";
+  }
+  if (location === "The Ballpark of the Palm Beaches - West Palm Beach") {
+    new_location = "The Ballpark of the Palm Beaches";
+  }
+  if (location === "Olympic Stadium - Montreal") {
+    new_location = "Olympic Stadium";
+  }
+  if (location === "AutoZone Park - Memphis") {
+    new_location = "AutoZone Park";
+  }
+  if (location === "Hammons Field - Springfield") {
+    new_location = "Hammons Field";
+  }
+  if (location === "Cashman Field - Las Vegas") {
+    new_location = "Cashman Field";
+  }
+  if (location === "Alamodome - San Antonio") {
+    new_location = "Alamodome";
+  }
+  if (location === "Harbor Park - Norfolk") {
+    new_location = "Harbor Park";
+  }
+  if (location === "Louisville Slugger Field - Louisville") {
+    new_location = "Louisville Slugger Field";
+  }
+  if (location === "Fifth Third Field - Dayton") {
+    new_location = "Fifth Third Field";
+  }
+  if (location === "") {
+    new_location = "";
+  }
+  if (new_location === "") {
+    console.log(location);
+  }
 
   return (new_location || "INVALID");
 
-}
+};
