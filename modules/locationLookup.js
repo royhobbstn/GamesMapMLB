@@ -190,9 +190,6 @@ module.exports = function (location) {
   if (location === "") {
     new_location = "";
   }
-  if (new_location === "") {
-    console.log(location);
-  }
 
   return (new_location || "INVALID");
 

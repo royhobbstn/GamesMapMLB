@@ -41,7 +41,7 @@ var appRouter = function (app) {
         var todays_games = obj.filter(function (d) {
             var tempDateString = d["START DATE"];
 
-            if (tempDateString == '02/26/17') { //day_pacifictime.mmddyy()) {
+            if (tempDateString == day_pacifictime.mmddyy()) {
                 return true;
             }
             else {
