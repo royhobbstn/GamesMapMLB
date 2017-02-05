@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'docker') {
   prod_path = '/';
 }
 
-app.use(prod_path, express.static(path.join(__dirname, 'public')));
+app.use(prod_path, express.static(path.join(__dirname, '/./public')));
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
