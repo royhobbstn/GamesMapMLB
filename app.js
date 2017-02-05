@@ -4,18 +4,22 @@ console.log(process.env.NODE_ENV);
 
 var express = require("express");
 var app = express();
-var path = require('path');
 
-// app.all(/^\/main$/, function(req, res) { res.redirect('/main/'); });
-// app.use('/main/',express.static(__dirname+'/public'));
 
-var prod_path = '/';
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
-if (process.env.NODE_ENV === 'docker') {
-  prod_path = '/mlb';
-}
+app.use(function (req, res, next) {
+  if (req.url.slice(-1) !== '/' && req.url.slice(-3) !== '.js' && req.url.slice(-3) !== 'tml' && req.url.slice(-3) !== 'css')
+    res.redirect(301, req.url + '/');
+  else
+    next();
+});
 
-app.use(prod_path, express.static(path.join(__dirname, '/./public')));
+app.use(express.static('public'));
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
