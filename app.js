@@ -12,14 +12,23 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(function (req, res, next) {
-  if (req.url.slice(-1) !== '/' && req.url.slice(-3) !== '.js' && req.url.slice(-3) !== 'tml' && req.url.slice(-3) !== 'css')
-    res.redirect(301, req.url + '/');
-  else
-    next();
-});
+// app.use(function (req, res, next) {
+//   if (req.url.slice(-1) !== '/' && req.url.slice(-3) !== '.js' && req.url.slice(-3) !== 'tml' && req.url.slice(-3) !== 'css')
+//     res.redirect(301, req.url + '/');
+//   else
+//     next();
+// });
 
-app.use(express.static('public'));
+var folder_path = '';
+
+if (process.env.NODE_ENV === 'docker') {
+  folder_path = 'public';
+}
+else {
+  folder_path = 'public/mlb';
+}
+
+app.use(express.static(folder_path));
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
