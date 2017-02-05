@@ -10,4 +10,4 @@ RUN npm install
 
 EXPOSE 4000
 
-CMD ["NODE_ENV=docker node", "app.js"]
+CMD ["NODE_ENV=docker", "node", "app.js"]
