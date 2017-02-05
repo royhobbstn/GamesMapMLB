@@ -12,7 +12,7 @@ var path = require('path');
 var prod_path = '/';
 
 if (process.env.NODE_ENV === 'docker') {
-  prod_path = '/mlb';
+  prod_path = '/';
 }
 
 app.use(prod_path, express.static(path.join(__dirname, 'public')));
