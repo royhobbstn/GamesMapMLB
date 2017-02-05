@@ -2,11 +2,12 @@
 
 var express = require("express");
 var app = express();
+var path = require('path');
 
 // app.all(/^\/main$/, function(req, res) { res.redirect('/main/'); });
 // app.use('/main/',express.static(__dirname+'/public'));
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname + '/./public')));
 
 
 app.use(function (req, res, next) {
