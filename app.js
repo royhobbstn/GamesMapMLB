@@ -9,13 +9,13 @@ var path = require('path');
 // app.all(/^\/main$/, function(req, res) { res.redirect('/main/'); });
 // app.use('/main/',express.static(__dirname+'/public'));
 
-var prod_path = '';
+var prod_path = '/';
 
 if (process.env.NODE_ENV === 'docker') {
-  prod_path = '/mlb/';
+  prod_path = '/mlb';
 }
 
-app.use(express.static(path.join(prod_path, 'public')));
+app.use(prod_path, express.static(path.join(__dirname, 'public')));
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
