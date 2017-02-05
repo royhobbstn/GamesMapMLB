@@ -1,11 +1,10 @@
-//Adapted from: http://itblog.mobi/2015/12/29/how-to-create-a-simple-restful-api-with-node-js/
+// Adapted from: http://itblog.mobi/2015/12/29/how-to-create-a-simple-restful-api-with-node-js/
 
 var express = require("express");
 var app = express();
 
-app.use(/.*[^\/]$/, function (req, res, next) {
-  res.redirect(req.originalUrl + '/');
-});
+// app.all(/^\/main$/, function(req, res) { res.redirect('/main/'); });
+// app.use('/main/',express.static(__dirname+'/public'));
 
 app.use(express.static('public'));
 
