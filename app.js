@@ -7,7 +7,7 @@ var app = express();
 
 
 app.use(function (req, res, next) {
-  if (req.url.slice(-4) === '/mlb') {
+  if (req.url.slice(-3) === 'mlb') {
     console.log('this');
     res.redirect(301, req.url + '/');
   }
