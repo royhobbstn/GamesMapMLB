@@ -6,7 +6,10 @@ var express = require("express");
 var app = express();
 
 
+
 app.use(function (req, res, next) {
+  console.log(req.url);
+  console.log(req.url.slice(-3))
   if (req.url.slice(-3) === 'mlb') {
     console.log('this');
     res.redirect(301, req.url + '/');
